@@ -53,7 +53,7 @@ with col1:
 
 with col2:
     st.title("Moataz Sobhy Elkholy")
-    st.subheader("Data Analyst/BI Developer")
+    st.subheader("Data Analyst / BI Developer")
 
 # 4. قسم التواصل
 st.markdown(f"""
@@ -72,18 +72,7 @@ projects = [
         "tools": "SQL Server, ETL, Data Modeling",
         "link": "https://github.com/moo3taz/Data-management_project"
     },
-    {
-        "title": "Sales Dashboard",
-        "desc": "Interactive dashboard to analyze monthly sales performance and identify business growth opportunities.",
-        "tools": "Power BI, DAX",
-        "link": "https://novypro.com" 
-    },
-    {
-        "title": "Vehicle Maintenance AI",
-        "desc": "An ongoing project to analyze vehicle maintenance data and predict breakdowns using historical records.",
-        "tools": "Python, Machine Learning",
-        "link": "https://github.com/moo3taz"
-    }
+    
 ]
 
 st.header("🚀 Featured Projects")
