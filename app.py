@@ -1,95 +1,104 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from PIL import Image
 
-# إعدادات الصفحة
-st.set_page_config(page_title="Moataz Sobhy Portfolio", page_icon="📊", layout="wide")
+# 1. إعدادات الصفحة (لمنع الترجمة وتحسين التنسيق)
+st.set_page_config(page_title="Moataz Elkholy Portfolio", layout="wide")
 
-# --- تحسين التصميم بـ CSS (لإخفاء الأخطاء وتجميل المربعات) ---
+# 2. كود الـ CSS لتنسيق الموقع بالكامل
 st.markdown("""
     <style>
-    .main { background-color: #0e1117; }
     .project-card {
-        background-color: #1f2937;
+        background-color: #1e293b;
         padding: 20px;
-        border-radius: 10px;
-        border: 1px solid #374151;
-        height: 250px;
-        margin-bottom: 20px;
+        border-radius: 12px;
+        border: 1px solid #334155;
+        margin-bottom: 25px;
+        height: 280px;
+        transition: 0.3s;
     }
-    a { color: #00CC96; text-decoration: none; font-weight: bold; }
-    a:hover { color: #ffffff; }
+    .project-card:hover { border-color: #38bdf8; }
+    .project-card h3 { color: #38bdf8; margin-top:0; }
+    .project-card p { color: #cbd5e1; font-size: 14px; line-height: 1.6; }
+    .project-card .tools { color: #94a3b8; font-weight: bold; font-size: 13px; }
+    .project-link {
+        background-color: #38bdf8;
+        color: white !important;
+        padding: 8px 15px;
+        border-radius: 6px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    .contact-info {
+        background-color: #0f172a;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
     </style>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-# --- Header Section (الصورة والبيانات الشخصية) ---
-col_h1, col_h2 = st.columns([1, 3])
+# 3. الهيدر التعريفي (تم تعديل الاسم والمسمى الوظيفي)
+st.title("👨‍💻 Moataz Sobhy Elkholy")
+st.subheader("BI Developer")
 
-with col_h1:
-    try:
-        img = Image.open("myphoto.jpg")
-        st.image(img, width=180)
-    except:
-        st.title("👤")
+# 4. قسم التواصل (إضافة الجيميل والـ GitHub)
+st.markdown(f"""
+    <div class="contact-info">
+        📍 Tanta, Egypt | 🎓 Faculty of Computers and AI<br>
+        📧 <b>Email:</b> <a href="mailto:moatazelkholy850@gmail.com" style="color:#38bdf8;">moatazelkholy850@gmail.com</a> | 
+        🐙 <b>GitHub:</b> <a href="https://github.com/moo3taz" target="_blank" style="color:#38bdf8;">github.com/moo3taz</a>
+    </div>
+""", unsafe_allow_html=True)
 
-with col_h2:
-    st.title("Moataz Sobhy Elkholy")
-    st.subheader("Data Analyst | Data Warehouse Specialist")
-    st.write("📍 Tanta, Egypt")
-    # الجيميل الصحيح
-    st.write("📧 motazelkholy850@gmail.com")
-    st.write("[LinkedIn](https://linkedin.com) | [GitHub](https://github.com)")
+# 5. قائمة المشاريع (بنفس النظام اللي اتفقنا عليه)
+projects = [
+    {{
+        "title": "End-to-End DWH",
+        "desc": "Integrated data warehouse design with multi-layer architecture to ensure fast access to information.",
+        "tools": "SQL Server, ETL, Data Modeling",
+        "link": "https://github.com/moo3taz/Data-management_project"
+    }},
+    {{
+        "title": "Sales Dashboard",
+        "desc": "Interactive dashboard to analyze monthly sales performance and identify business growth opportunities.",
+        "tools": "Power BI, DAX",
+        "link": "https://novypro.com" 
+    }},
+    {{
+        "title": "Vehicle Maintenance AI",
+        "desc": "An ongoing project to analyze vehicle maintenance data and predict breakdowns using historical records.",
+        "tools": "Python, Machine Learning",
+        "link": "https://github.com/moo3taz"
+    }}
+]
 
-st.write("---")
-
-# --- قسم أداء المشاريع (الرسم البياني) ---
-st.header("📈 Data Warehouse Impact")
-data = pd.DataFrame({
-    "Stage": ["Before Organizing", "Post-Regulation (DWH)"],
-    "query time (second)": [15.5, 0.8]
-})
-fig = px.bar(data, x="Stage", y="query time (second)", 
-             color="Stage", color_discrete_sequence=["#EF553B", "#00CC96"])
-st.plotly_chart(fig, use_container_width=True)
-
-st.write("---")
-
-# --- قسم المشاريع (Featured Projects) ---
 st.header("🚀 Featured Projects")
-p_col1, p_col2, p_col3 = st.columns(3)
+cols = st.columns(3)
 
-with p_col1:
-    st.markdown('''
-    <div class="project-card">
-        <h3>End-to-End DWH</h3>
-        <p>Integrated data warehouse design with multi-layer architecture to ensure fast data retrieval.</p>
-        <p><b>Tools:</b> SQL Server, ETL</p>
-        <a href="https://github.com/moo3taz/Data-management_project">🔗 View on GitHub</a>
-    </div>
-    ''', unsafe_allow_html=True)
+for i, p in enumerate(projects):
+    with cols[i % 3]:
+        st.markdown(f"""
+        <div class="project-card">
+            <h3>{{p['title']}}</h3>
+            <p>{{p['desc']}}</p>
+            <p class="tools">🛠 Tools: {{p['tools']}}</p>
+            <a href="{{p['link']}}" target="_blank" class="project-link">View Project</a>
+        </div>
+        """, unsafe_allow_html=True)
 
-with p_col2:
-    st.markdown('''
-    <div class="project-card">
-        <h3>Sales Dashboard</h3>
-        <p>Interactive dashboard to analyze monthly sales performance and identify business growth opportunities.</p>
-        <p><b>Tools:</b> Power BI, DAX</p>
-        <a href="https://novypro.com">🔗 View Dashboard</a>
-    </div>
-    ''', unsafe_allow_html=True)
-
-with p_col3:
-    st.markdown('''
-    <div class="project-card">
-        <h3>Vehicle Maintenance AI</h3>
-        <p>مشروع قيد التنفيذ لتحليل بيانات صيانة السيارات والتنبؤ بالأعطال.</p>
-        <p><b>Tools:</b> Python, Machine Learning</p>
-        <p style="color: #orange;">🚧 In Progress</p>
-    </div>
-    ''', unsafe_allow_html=True)
-
+# 6. الرسم البياني لتأثير الـ DWH
 st.write("---")
+st.header("📊 Data Warehouse Impact")
+impact_data = pd.DataFrame({{
+    "Stage": ["Before Organizing", "Post-Regulation (DWH)"],
+    "Query Time (Sec)": [15.5, 0.8]
+}})
+fig = px.bar(impact_data, x="Stage", y="Query Time (Sec)", color="Stage",
+             color_discrete_sequence=["#EF553B", "#00CC96"])
+st.plotly_chart(fig, use_container_width=True)
 
 # --- التقدم والمهارات ---
 st.header("🛠 Technical Toolbox")
