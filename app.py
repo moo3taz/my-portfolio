@@ -53,7 +53,7 @@ with col1:
 
 with col2:
     st.title("Moataz Sobhy Elkholy")
-    st.subheader("Data Analyst / BI Developer")
+    st.subheader("Data Analyst | BI Developer")
 
 # 4. قسم التواصل
 st.markdown(f"""
@@ -108,7 +108,7 @@ with col_s1:
     st.write("**Data Visualization:** Power BI (DAX, Power Query) , Excel (Advanced Dashboards)")
     st.write("**Database Management:** SQL (Joins, Subqueries, Aggregations)")
     st.write("**Programming:** Python (Pandas, NumPy, Matplotlib)")
-    st.write("**Analytical Skills:** Statistics, Data Cleaning, ETL Processes, Exploratory Data Analysis (EDA)")
+    st.write("**Analytical Skills:** Statistics, Data Cleaning, ETL Processes, Exploratory Data Analysis(EDA)")
 with col_s2:
     st.write("**Database:** SQL Server, Data Warehousing")
     st.progress(85, text="SQL Mastery")
