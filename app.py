@@ -65,7 +65,7 @@ with p_col1:
         <h3>End-to-End DWH</h3>
         <p>تصميم مستودع بيانات متكامل بجميع الطبقات لضمان سرعة الوصول للمعلومات.</p>
         <p><b>Tools:</b> SQL Server, ETL</p>
-        <a href="https://github.com">🔗 View on GitHub</a>
+        <a href="https://github.com/moo3taz/Data-management_project">🔗 View on GitHub</a>
     </div>
     ''', unsafe_allow_html=True)
 
