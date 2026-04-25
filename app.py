@@ -46,11 +46,11 @@ st.write("---")
 # --- قسم أداء المشاريع (الرسم البياني) ---
 st.header("📈 Data Warehouse Impact")
 data = pd.DataFrame({
-    "المرحلة": ["قبل التنظيم", "بعد التنظيم (DWH)"],
-    "وقت الاستعلام (ثانية)": [15.5, 0.8]
+    "Stage": ["Before Organizing", "Post-Regulation (DWH)"],
+    "query time (second)": [15.5, 0.8]
 })
-fig = px.bar(data, x="المرحلة", y="وقت الاستعلام (ثانية)", 
-             color="المرحلة", color_discrete_sequence=["#EF553B", "#00CC96"])
+fig = px.bar(data, x="Stage", y="query time (second)", 
+             color="Stage", color_discrete_sequence=["#EF553B", "#00CC96"])
 st.plotly_chart(fig, use_container_width=True)
 
 st.write("---")
@@ -63,7 +63,7 @@ with p_col1:
     st.markdown('''
     <div class="project-card">
         <h3>End-to-End DWH</h3>
-        <p>تصميم مستودع بيانات متكامل بجميع الطبقات لضمان سرعة الوصول للمعلومات.</p>
+        <p>Integrated data warehouse design with multi-layer architecture to ensure fast data retrieval.</p>
         <p><b>Tools:</b> SQL Server, ETL</p>
         <a href="https://github.com/moo3taz/Data-management_project">🔗 View on GitHub</a>
     </div>
@@ -73,7 +73,7 @@ with p_col2:
     st.markdown('''
     <div class="project-card">
         <h3>Sales Dashboard</h3>
-        <p>لوحة بيانات تفاعلية لتحليل المبيعات الشهرية وتحديد نقاط القوة.</p>
+        <p>Interactive dashboard to analyze monthly sales performance and identify business growth opportunities.</p>
         <p><b>Tools:</b> Power BI, DAX</p>
         <a href="https://novypro.com">🔗 View Dashboard</a>
     </div>
