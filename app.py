@@ -58,7 +58,7 @@ with col2:
 # 4. قسم التواصل
 st.markdown(f"""
     <div class="contact-info">
-        📍 Tanta, Egypt | 🎓 Faculty of Computers and AI<br>
+        📍 Tanta, Egypt | 🎓 Faculty of Computers and AI '<br>
         📧 <b>Email:</b> <a href="mailto:moatazelkholy850@gmail.com" style="color:#38bdf8;">moatazelkholy850@gmail.com</a> | 
         🐙 <b>GitHub:</b> <a href="https://github.com/moo3taz" target="_blank" style="color:#38bdf8;">github.com/moo3taz</a>
     </div>
