@@ -41,8 +41,19 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 3. الهيدر التعريفي
-st.title("👨‍💻 Moataz Sobhy Elkholy")
-st.subheader("BI Developer")
+# --- الهيدر مع صورتك الشخصية ---
+col1, col2 = st.columns([1, 4])
+
+with col1:
+    # هنا غيرنا الاسم لـ myphoto.jpg عشان يطابق الملف اللي أنت رافعه
+    try:
+        st.image("myphoto.jpg", width=150)
+    except:
+        st.write("👤") # احتياطي لو حصل مشكلة في التحميل
+
+with col2:
+    st.title("Moataz Sobhy Elkholy")
+    st.subheader("Data Analyst/BI Developer")
 
 # 4. قسم التواصل
 st.markdown(f"""
