@@ -102,11 +102,13 @@ fig = px.bar(impact_data, x="Stage", y="Query Time (Sec)", color="Stage",
              color_discrete_sequence=["#EF553B", "#00CC96"])
 st.plotly_chart(fig, use_container_width=True)
 # --- التقدم والمهارات ---
-st.header("🛠 Technical Toolbox")
+st.header("🛠 Technical Skills")
 col_s1, col_s2 = st.columns(2)
 with col_s1:
-    st.write("**Languages:** SQL (T-SQL), Python (Pandas, NumPy)")
-    st.write("**BI Tools:** Power BI, Excel (Advanced)")
+    st.write("**Data Visualization:** Power BI (DAX, Power Query) Excel (Advanced Dashboards)")
+    st.write("**Database Management:** SQL (Joins, Subqueries, Aggregations)")
+    st.write("**Programming:** Python (Pandas, NumPy, Matplotlib)")
+    st.write("**Analytical Skills:** Statistical Analysis Data Cleaning ETL Processes Exploratory Data Analysis (EDA)")
 with col_s2:
     st.write("**Database:** SQL Server, Data Warehousing")
     st.progress(85, text="SQL Mastery")
