@@ -69,7 +69,7 @@ projects = [
     {
         "title": "End-to-End DWH",
         "desc": "Integrated data warehouse design with multi-layer architecture to ensure fast access to information.",
-        "tools": "SQL Server, ETL, Data Modeling",
+        "tools": "SQL Server, ETL, Data Modeling, Power Bi",
         "link": "https://github.com/moo3taz/Data-management_project"
     },
     
