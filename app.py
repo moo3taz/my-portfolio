@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# 1. إعدادات الصفحة (لمنع الترجمة وتحسين التنسيق)
+# 1. إعدادات الصفحة
 st.set_page_config(page_title="Moataz Elkholy Portfolio", layout="wide")
 
-# 2. كود الـ CSS لتنسيق الموقع بالكامل
+# 2. كود الـ CSS لتنسيق الموقع
 st.markdown("""
     <style>
     .project-card {
@@ -40,11 +40,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 3. الهيدر التعريفي (تم تعديل الاسم والمسمى الوظيفي)
+# 3. الهيدر التعريفي
 st.title("👨‍💻 Moataz Sobhy Elkholy")
 st.subheader("BI Developer")
 
-# 4. قسم التواصل (إضافة الجيميل والـ GitHub)
+# 4. قسم التواصل
 st.markdown(f"""
     <div class="contact-info">
         📍 Tanta, Egypt | 🎓 Faculty of Computers and AI<br>
@@ -53,26 +53,26 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
-# 5. قائمة المشاريع (بنفس النظام اللي اتفقنا عليه)
+# 5. قائمة المشاريع (تعديل الأقواس لمنع الـ TypeError)
 projects = [
-    {{
+    {
         "title": "End-to-End DWH",
         "desc": "Integrated data warehouse design with multi-layer architecture to ensure fast access to information.",
         "tools": "SQL Server, ETL, Data Modeling",
         "link": "https://github.com/moo3taz/Data-management_project"
-    }},
-    {{
+    },
+    {
         "title": "Sales Dashboard",
         "desc": "Interactive dashboard to analyze monthly sales performance and identify business growth opportunities.",
         "tools": "Power BI, DAX",
         "link": "https://novypro.com" 
-    }},
-    {{
+    },
+    {
         "title": "Vehicle Maintenance AI",
         "desc": "An ongoing project to analyze vehicle maintenance data and predict breakdowns using historical records.",
         "tools": "Python, Machine Learning",
         "link": "https://github.com/moo3taz"
-    }}
+    }
 ]
 
 st.header("🚀 Featured Projects")
@@ -80,26 +80,27 @@ cols = st.columns(3)
 
 for i, p in enumerate(projects):
     with cols[i % 3]:
-        st.markdown(f"""
+        # استخدمنا % هنا بدل f-string للأمان وتجنب الأقواس
+        card_html = """
         <div class="project-card">
-            <h3>{{p['title']}}</h3>
-            <p>{{p['desc']}}</p>
-            <p class="tools">🛠 Tools: {{p['tools']}}</p>
-            <a href="{{p['link']}}" target="_blank" class="project-link">View Project</a>
+            <h3>%s</h3>
+            <p>%s</p>
+            <p class="tools">🛠 Tools: %s</p>
+            <a href="%s" target="_blank" class="project-link">View Project</a>
         </div>
-        """, unsafe_allow_html=True)
+        """ % (p['title'], p['desc'], p['tools'], p['link'])
+        st.markdown(card_html, unsafe_allow_html=True)
 
-# 6. الرسم البياني لتأثير الـ DWH
+# 6. الرسم البياني
 st.write("---")
 st.header("📊 Data Warehouse Impact")
-impact_data = pd.DataFrame({{
+impact_data = pd.DataFrame({
     "Stage": ["Before Organizing", "Post-Regulation (DWH)"],
     "Query Time (Sec)": [15.5, 0.8]
-}})
+})
 fig = px.bar(impact_data, x="Stage", y="Query Time (Sec)", color="Stage",
              color_discrete_sequence=["#EF553B", "#00CC96"])
 st.plotly_chart(fig, use_container_width=True)
-
 # --- التقدم والمهارات ---
 st.header("🛠 Technical Toolbox")
 col_s1, col_s2 = st.columns(2)
