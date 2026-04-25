@@ -28,7 +28,7 @@ col_h1, col_h2 = st.columns([1, 3])
 
 with col_h1:
     try:
-        img = Image.open("/content/myphoto.jpg")
+        img = Image.open("myphoto.jpg")
         st.image(img, width=180)
     except:
         st.title("👤")
