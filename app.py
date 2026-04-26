@@ -67,7 +67,7 @@ st.markdown(f"""
 # 5. قائمة المشاريع (تعديل الأقواس لمنع الـ TypeError)
 projects = [
     {
-        "title": "End-to-End DWH",
+        "title": "End-to-End Sales analytics Pipeline",
         "desc": "Integrated data warehouse design with multi-layer architecture to ensure fast access to information.",
         "tools": "SQL Server, ETL, Data Modeling, Power Bi",
         "link": "https://github.com/moo3taz/Data-management_project"
