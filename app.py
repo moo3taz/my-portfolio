@@ -57,11 +57,12 @@ with col2:
 
 # 4. قسم التواصل
 st.markdown(f"""
-    <div class="contact-info">
-        📍 Tanta, Egypt | 🎓 Faculty of Computers and AI <br>
-        📧 <b>Email:</b> <a href="mailto:moatazelkholy850@gmail.com" style="color:#38bdf8;">moatazelkholy850@gmail.com</a> | 
-        🐙 <b>GitHub:</b> <a href="https://github.com/moo3taz" target="_blank" style="color:#38bdf8;">github.com/moo3taz</a>
-    </div>
+<div class="contact-info">
+    📍 Tanta, Egypt | 🎓 Faculty of Computers and AI <br>
+    📧 <b>Email:</b> <a href="mailto:moatazelkholy850@gmail.com">moatazelkholy850@gmail.com</a> <br>
+    🐙 <b>GitHub:</b> <a href="https://github.com/moo3taz" target="_blank">github.com/moo3taz</a> <br>
+    🔗 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/moataz-sobhy-elkholy/" target="_blank">linkedin.com/in/moataz-elkholy</a>
+</div>
 """, unsafe_allow_html=True)
 
 # 5. قائمة المشاريع (تعديل الأقواس لمنع الـ TypeError)
