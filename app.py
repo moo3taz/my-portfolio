@@ -61,7 +61,7 @@ st.markdown(f"""
         📍 Tanta, Egypt | 🎓 Faculty of Computers and AI <br>
         📧 <b>Email:</b> <a href="mailto:moatazelkholy850@gmail.com" style="color:#38bdf8;">moatazelkholy850@gmail.com</a> | 
         🐙 <b>GitHub:</b> <a href="https://github.com/moo3taz" target="_blank" style="color:#38bdf8;">github.com/moo3taz</a>
-        👤 <b>Linkedin:</b> <a href="www.linkedin.com/in/moataz-sobhy-elkholy-836ab91ba" target="_blank" style="color:#38bdf8;">github.com/moo3taz</a>
+        👤 <b>Linkedin:</b> <a href="www.linkedin.com/in/moataz-sobhy-elkholy-836ab91ba" target="_blank" style="color:#38bdf8;">www.linkedin.com/in/moataz-sobhy-elkholy-836ab91ba</a>
     </div>
 """, unsafe_allow_html=True)
 
